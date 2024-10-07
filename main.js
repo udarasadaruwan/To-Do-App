@@ -15,6 +15,7 @@ function renderTasks() {
 
         // Add onchange event to the checkbox
         checkbox.onchange = (event) => {
+            event.stopPropagation();
             task.completed = checkbox.checked; 
             renderTasks(); 
         };
@@ -24,9 +25,12 @@ function renderTasks() {
         deleteButton.textContent = 'Delete';
         deleteButton.style.backgroundColor = 'red';
         deleteButton.onclick = (event) => {
-            event.stopPropagation(); 
-            tasks.splice(index, 1);
-            renderTasks(); 
+            event.stopPropagation();
+            const confirmed = confirm(`Are you sure you want to delete the task: "${task.text}"?`);
+            if (confirmed) {
+                tasks.splice(index, 1); 
+                renderTasks(); 
+            }
         };
 
         // Button for editing the task
