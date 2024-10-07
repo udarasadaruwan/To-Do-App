@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+body .container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+body .container h1 {
+  text-align: center;
+}
+body .container input {
+  width: 70%;
+  padding: 10px;
+}
+body .container button {
+  padding: 10px;
+  border: none;
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+}
+body .container ul {
+  list-style: none;
+  padding: 0;
+}
+body .container ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+body .container ul li.completed {
+  text-decoration: line-through;
+  color: gray;
+}/*# sourceMappingURL=styles.css.map */
