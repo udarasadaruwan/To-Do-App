@@ -4,7 +4,8 @@ body {
   margin: 0;
   padding: 20px;
 }
-body .container {
+
+.container {
   max-width: 500px;
   margin: auto;
   background: white;
@@ -12,30 +13,61 @@ body .container {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-body .container h1 {
+
+.container h1 {
   text-align: center;
 }
-body .container input {
+
+.container input[type="text"] {
   width: 70%;
   padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px; 
 }
-body .container button {
+
+.container button {
   padding: 10px;
   border: none;
   background-color: blue;
   border-radius: 5px;
   color: white;
 }
-body .container ul {
-  list-style: none;
+
+.container ul {
+  list-style-type: none;
   padding: 0;
 }
-body .container ul li {
+
+.container ul li {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
 }
-body .container ul li.completed {
+
+.container ul li input[type="checkbox"] {
+  margin-right: 10px;
+  flex-shrink: 0; 
+}
+
+.container ul li span {
+  flex-grow: 1; 
+  text-align: left;
+  word-wrap: break-word; 
+}
+
+.container ul li div {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; 
+}
+
+.container ul li div button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+li.completed span {
   text-decoration: line-through;
   color: gray;
-}/*# sourceMappingURL=styles.css.map */
+}

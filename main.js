@@ -6,19 +6,31 @@ function renderTasks() {
 
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
-        li.textContent = task.text;
 
         // Checkbox for marking task as complete
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.checked = task.completed; 
+        checkbox.checked = task.completed;
 
-        // Add onchange event to the checkbox
         checkbox.onchange = (event) => {
             event.stopPropagation();
             task.completed = checkbox.checked; 
             renderTasks(); 
         };
+
+   
+        const taskText = document.createElement('span');
+        taskText.textContent = task.text;
+
+        // Set class for completed tasks
+        li.className = task.completed ? 'completed' : ''; 
+
+
+        li.appendChild(checkbox); 
+        li.appendChild(taskText); 
+
+        // Container for buttons 
+        const buttonContainer = document.createElement('div');
 
         // Button for deleting the task
         const deleteButton = document.createElement('button');
@@ -34,19 +46,26 @@ function renderTasks() {
         };
 
         // Button for editing the task
-        li.onclick = (event) => {
-            event.stopPropagation(); 
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = (event) => {
+            event.stopPropagation();
             const newTask = prompt('Edit task:', task.text);
             if (newTask !== null && newTask.trim() !== '') {
                 task.text = newTask; 
-                renderTasks(); 
+                renderTasks();
             }
         };
 
-        li.className = task.completed ? 'completed' : ''; 
-        li.appendChild(checkbox); 
-        li.appendChild(deleteButton); 
-        taskList.appendChild(li); 
+        // Append buttons to the container
+        buttonContainer.appendChild(editButton);
+        buttonContainer.appendChild(deleteButton);
+
+        // Append the button container to the list item
+        li.appendChild(buttonContainer); 
+
+        // Append the list item to the task list
+        taskList.appendChild(li);
     });
 }
 
