@@ -1,6 +1,6 @@
 # To-Do List
 
-A simple to-do list app built with HTML, CSS, and JavaScript that allows users to add, edit, complete, and delete tasks.
+## A simple to-do list app built with HTML, CSS, and JavaScript that allows users to add, edit, complete, and delete tasks.
 
 https://udara18.github.io/To-Do-App/
 
