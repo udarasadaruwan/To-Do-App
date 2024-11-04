@@ -2,7 +2,7 @@
 
 ## A simple to-do list app built with HTML, CSS, and JavaScript that allows users to add, edit, complete, and delete tasks.
 
-https://udara18.github.io/To-Do-App/
+https://udarasadaruwan.github.io/To-Do-App/
 
 ## Features
 - **Add Tasks**: Input tasks via a text field.
